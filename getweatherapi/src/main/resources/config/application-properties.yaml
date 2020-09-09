@@ -1,0 +1,9 @@
+http:
+  port: "8081"
+
+openapiWeather:
+  host: "api.openweathermap.org"
+  port: "80"
+  path: "/data/2.5/weather"
+  apiKey: "64b4fca96e364253311b1f990c36737a"
+

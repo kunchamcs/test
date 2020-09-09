@@ -1,0 +1,26 @@
+#%RAML 1.0
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/57937852-afc8-4ffc-82e9-0644029db477/ # 
+title: GetWeatherAPI
+
+types:
+  WeatherData: !include output/WeatherOutPut.raml
+
+/getWeather:
+  get:
+    headers:
+      name:
+        required: false
+      lastname:
+        required: false
+      dateTime:
+        required: false
+      city:
+        required: true
+      country:
+        required: true
+    responses:
+      200:
+        body:
+          application/json:
+            type: WeatherData
+      
