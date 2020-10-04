@@ -5,7 +5,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
     <apikit:config name="getweatherapi-config" api="getweatherapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
-    <flow name="getweatherapi-main">
+	<flow name="getweatherapi-main">
         <http:listener config-ref="HTTP_Listener_config" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
                 <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
@@ -100,7 +100,7 @@ output application/json
     <flow name="get:\getWeather:getweatherapi-config">
 		<set-variable value="#[attributes.headers.city]" doc:name="city" doc:id="d1f9234f-03ed-4fcb-aa93-99eb5cc8ec0f" variableName="cityname"/>
 		<set-variable value="${openapiWeather.apiKey}" doc:name="apiKey" doc:id="a5bfcd43-fcc7-4f66-a657-8ba74f44ab4d" variableName="appid"/>
-		<set-variable value="t" doc:name="Set Variable" doc:id="93289e67-bfce-4eb3-941e-7e6eecb9db44" variableName="t"/>
+		<set-variable value="ttt" doc:name="Set Variable" doc:id="93289e67-bfce-4eb3-941e-7e6eecb9db44" variableName="t"/>
 		<http:request method="GET" doc:name="Request" doc:id="344417eb-ec33-4319-8815-173b688e58e5" config-ref="OpenWeatherAPIHTTP_Request_configuration" sendCorrelationId="ALWAYS" path="${openapiWeather.path}">
 			<http:query-params ><![CDATA[#[output application/java
 ---
